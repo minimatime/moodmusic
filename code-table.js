@@ -28,11 +28,10 @@ $(document).ready(function () {
 
     data.forEach(function (row, index) { // iterate over every object in data and run this function
       //console.log(row);
-      //console.log(row["Name"]);
+      console.log(row["Name"]);
       
-      //if(index == 0) return; // you might not need this. guess why?
-      $("<img src=" + row.Image + ">").appendTo("body");
-      //let div = $("<p>" + row.Name + "</p>").appendTo("table"); // # refers to div id
+      //$("<img src=" + row.Image + ">").appendTo("body");
+      // let div = $("<p>" + row.Name + "</p>").appendTo("table"); // # refers to div id
       
       // let's make a checkbox that's checked or not depending on whether we listened to it already
       // if(row["Listened?"] == "TRUE"){
