@@ -8,6 +8,18 @@
       text-align: center;
       margin: 1em;
     }
+
+    h2 {
+      font-size: large;
+    }
+    img {
+      width: 150px;
+      height: auto;
+    }
+
+    #entry {
+      width: 150px;
+    }
     
     /* code.js */
     #content {

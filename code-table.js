@@ -31,7 +31,16 @@ $(document).ready(function () {
       console.log(row["Name"]);
       
       // $("<img src=" + row.Image + ">").appendTo("body");
-      let div = $("<p>" + row.Name + "</p>").appendTo("table"); // # refers to div id
+      $("<div>")
+    .attr("id", "entry")
+    .append(
+        $("<h2>").text(row.Name),
+        $("<img>").attr("src", row.Image),
+        $("<h3>").text(row.Media),
+        $("<p>").text(row.Rating),
+        $("<p>").text(row.Thoughts)
+    )
+    .appendTo("table"); // # refers to div id
       
       // let's make a checkbox that's checked or not depending on whether we listened to it already
       // if(row["Listened?"] == "TRUE"){
