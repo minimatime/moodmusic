@@ -22,33 +22,43 @@ var SPREADSHEET_ID_AND_TAB = "126OHKbEF_Q-XboowWjMfQiRaXbkky2uJG7IvuBgLDl4/Sheet
 $(document).ready(function () {
   
   $.getJSON("https://opensheet.elk.sh/" + SPREADSHEET_ID_AND_TAB, function (data) {
-    
-    console.log(data);
+
     
 
-    data.forEach(function (row, index) { // iterate over every object in data and run this function
-      //console.log(row);
-      console.log(row["Name"]);
-      
-      // $("<img src=" + row.Image + ">").appendTo("body");
+    $("<div>")
+    .attr("id", "entry-container")
+    .appendTo("body");
+
+    data.forEach(function (row, index) {
+
+      let thoughtsId = "thoughts-" + index;
+
       $("<div>")
-    .attr("id", "entry")
+    .addClass("entry")
     .append(
         $("<h2>").text(row.Name),
         $("<img>").attr("src", row.Image),
         $("<h3>").text(row.Media),
         $("<p>").text(row.Rating),
-        $("<p>").text(row.Thoughts)
-    )
-    .appendTo("table"); // # refers to div id
-      
-      // let's make a checkbox that's checked or not depending on whether we listened to it already
-      // if(row["Listened?"] == "TRUE"){
-      //   $(`<input type="checkbox" checked>`).appendTo(div);
-      // } else{
-      //   $(`<input type="checkbox">`).hide();
-      // }
-  
+        $("<button>")
+                .addClass("btn")
+                .attr({
+                    type: "button",
+                    "data-toggle": "collapse",
+                    "data-target": "#" + thoughtsId,
+                    "aria-expanded": "false",
+                    "aria-controls": thoughtsId
+                })
+                .text("Toggle Thoughts"),
+            // Add the collapse div for thoughts
+            $("<div>")
+                .addClass("collapse")
+                .attr("id", thoughtsId)
+                .append(
+                        $("<p>").text(row.Thoughts)
+                )
+        )
+    .appendTo("#entry-container");
     });
   });  
 });

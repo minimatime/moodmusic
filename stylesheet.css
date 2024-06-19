@@ -2,6 +2,7 @@
     
     body{
       font-family: monospace;
+
     }
     
     header{
@@ -12,14 +13,40 @@
     h2 {
       font-size: large;
     }
+
     img {
       width: 150px;
       height: auto;
     }
 
-    #entry {
+    .entry {
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      padding: 10px;
+      margin: 10px;
+      background-color: #f9f9f9;
       width: 150px;
     }
+
+    .entry img {
+      object-fit:cover;
+     	object-position: center;
+      width:150px;
+      height:auto;
+    }
+
+    #entry-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: left;
+      gap: 30px;
+    }
+
+    .collapse {
+      width: 100%; /* Ensure collapse section takes full width of the entry */
+      transition: height 0.35s ease; /* Smooth transition for collapse */
+  }
     
     /* code.js */
     #content {
@@ -32,10 +59,7 @@
       width: 200px;
     }
     
-    /* codeusingtable.js */
-    table{
-      margin: 0 uato;
-    }
+   
     
     td{
       padding: 6px;
