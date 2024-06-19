@@ -16,7 +16,7 @@ Learn more at https://github.com/benborgers/opensheet
   
   We're using the 'Music' tab, so this is what we write...
 */
-var SPREADSHEET_ID_AND_TAB = "16ABb-dvasSNME_7Rq-MfoAwqzUGL9n0fMCSUNn3lYoY/Music";
+var SPREADSHEET_ID_AND_TAB = "126OHKbEF_Q-XboowWjMfQiRaXbkky2uJG7IvuBgLDl4/Sheet";
 
 
 $(document).ready(function () {
@@ -30,8 +30,8 @@ $(document).ready(function () {
       //console.log(row);
       console.log(row["Name"]);
       
-      //$("<img src=" + row.Image + ">").appendTo("body");
-      // let div = $("<p>" + row.Name + "</p>").appendTo("table"); // # refers to div id
+      // $("<img src=" + row.Image + ">").appendTo("body");
+      let div = $("<p>" + row.Name + "</p>").appendTo("table"); // # refers to div id
       
       // let's make a checkbox that's checked or not depending on whether we listened to it already
       // if(row["Listened?"] == "TRUE"){

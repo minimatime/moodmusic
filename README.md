@@ -1,2 +1,2 @@
-# moodmusic
-Visualizing my music through the months by the mood that they fit 
+# mediatracking
+Tracking all the media I am exposed to for Summer 2024
